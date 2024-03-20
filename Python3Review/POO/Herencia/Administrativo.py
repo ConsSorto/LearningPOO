@@ -11,7 +11,7 @@ class Administrativo(Empleado):
     #     super().__init__(id, n1, n2, a1, a2, dir, nEmp)
 
     def __init__(self, id, n1, n2, a1, a2, dir, nEmp, area="", campo=""):
-        super().__init__(id, n1, n2, a1, a2, dir, nEmp)
+        Empleado.__init__(self, id, n1, n2, a1, a2, dir, nEmp)
         self.__area = area
         self.__campo = campo
 
@@ -29,6 +29,9 @@ class Administrativo(Empleado):
 
     # def __str__(self, mostrarEmpleado):
     #     return Empleado.__str__(self, mostrarEmpleado) + f"\n\rAdministrativo : {self.getCampo()} {self.getArea()} "
+
+    # def __str__(self):
+    #     return Empleado.__str__(self) + f"\n\rAdministrativo : {self.getCampo()} {self.getArea()} "
 
     def __str__(self):
         if type(self) is Administrativo:

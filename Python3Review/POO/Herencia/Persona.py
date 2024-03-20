@@ -1,4 +1,10 @@
-class Persona:
+from abc import ABC, abstractmethod
+# @abstractmethod
+# def mover(self):
+#     pass
+
+
+class Persona(ABC):
     def __init__(self, id, n1, n2, a1, a2, dir):
         self.__id = id
         self.__n1 = n1
@@ -28,6 +34,9 @@ class Persona:
     def __str__(self):
         return f'\r\nPersona : {self.getId()} {self.getN1()} {self.getN2()} {self.getA1()} {self.getA2()}'
 
+    @abstractmethod
+    def queComen(self):
+        pass
 
 # persona = Persona('0801199900023', 'Cons', '', 'Sorto', 'Reyes', 'Tegucigalpa')
 # print(persona)

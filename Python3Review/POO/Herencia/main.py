@@ -9,7 +9,7 @@ print(Jefe.mro())
 print(f"Datos del Jefe : {jefe}")
 
 print(type(jefe))
-print(type(jefe) is Maestro)
+# print(type(jefe) is Maestro)
 
 print(jefe.getTipo())
 print(jefe.getTipoSuper())

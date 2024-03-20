@@ -17,8 +17,10 @@ class Alumno(Persona):
     def getNcuenta(self):
         return self.__ncuenta
 
+    def queComen(self):
+        return "Lo que tenga"
     def __str__(self):
         return super().__str__() + f'\n\rCarrera : {self.__carrera} {self.getHorario()} {self.getNcuenta()} '
 
-# alumno = Alumno('0801199900023', 'Cons', '', 'Sorto', 'Reyes', 'Tegucigalpa', 'IS', '7-9', '20222001212')
-# print(alumno)
+alumno = Alumno('0801199900023', 'Cons', '', 'Sorto', 'Reyes', 'Tegucigalpa', 'IS', '7-9', '20222001212')
+print(alumno)
