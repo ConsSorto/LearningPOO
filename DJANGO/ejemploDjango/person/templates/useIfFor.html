@@ -1,0 +1,14 @@
+{%  extends 'layout.html' %}
+{% block title %}
+{{ title }}
+{% endblock %}
+{% block content %}
+   {% for numero in numeros %}
+       {{ numero }}
+   {% endfor %}
+
+    {% if numeros|length > 10 %}
+          <p>El tamano de los numero en mayor a 10</p>
+    {% endif %}
+
+{% endblock %}

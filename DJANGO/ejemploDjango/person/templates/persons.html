@@ -1,0 +1,26 @@
+{%  extends 'layout.html' %}
+{% block title %}
+{{ title }}
+{% endblock %}
+{% block content %}
+    <table class="table table-bordered">
+    <thead>
+        <th>Primer Nombre</th>
+        <th>Apellido</th>
+        <th>Creado el</th>
+        <th>Actualizado el</th>
+        <th>Acciones</th>
+    </thead>
+    <tbody>
+       {% for person in persons %}
+           <tr>
+           <td>{{ person.firstName }}</td>
+           <td>{{ person.lastName }}</td>
+           <td>{{ person.created_at }}</td>
+           <td>{{ person.updated_at }}</td>
+           <td>Update - Delete</td>
+           </tr>
+       {% endfor %}
+    </tbody>
+    </table>
+{% endblock %}
