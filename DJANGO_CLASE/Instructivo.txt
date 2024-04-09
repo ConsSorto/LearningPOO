@@ -1,7 +1,3 @@
-# LearningPOO
-Learning POO Python Java
-
-
 1. Preparacion del proyecto
 Dependencias pipy https://pypi.org/
 Entorno virtual y global
@@ -64,3 +60,5 @@ Crear una app
     update = actualizar un registro de la base de datos
     delete = borrar un registro de la base de datos
 10. Forms
+
+
