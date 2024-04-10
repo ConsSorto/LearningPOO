@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+{% block title %}
+{{title}}
+{% endblock%}
+{% block content %}
+<h1>Listado Personas</h1>
+
+<table>
+    <thead>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Creado en</th>
+        <th>Actualizado en</th>
+        <th>Acciones</th>
+    </thead>
+    <tbody>
+        {% for persona in personas%}
+        <tr>
+            <td>{{persona.firstName}}</td>
+            <td>{{persona.lastName}}</td>
+            <td>{{persona.created_at}}</td>
+            <td>{{persona.updated_at}}</td>
+            <td>Editar/Eliminar</td>
+        </tr>
+        {% endfor %}
+
+    </tbody>
+</table>
+{% endblock %}

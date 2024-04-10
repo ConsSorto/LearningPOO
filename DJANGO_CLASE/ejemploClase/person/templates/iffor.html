@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>If y For</title>
+</head>
+<body>
+    {% for numero in numeros%}
+        {{numero}}
+    {% endfor %}
+
+    {% if numeros|length > 10%}
+        <h1>El numero es mayor a 10</h1>
+    {%endif%}
+</body>
+</html>

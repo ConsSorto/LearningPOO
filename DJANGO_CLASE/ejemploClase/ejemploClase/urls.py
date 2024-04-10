@@ -25,5 +25,8 @@ urlpatterns = [
     path('ejemplo/<str:persona>/<str:apellido>', views.ejemploPersona2, name='ejemploPersona2'),
     path('ejemplo-render', views.ejemploRender, name='ejemploRender'),
     path('ejemplo-render-var', views.ejemploRenderVar, name='ejemploRenderVar'),
+    path('ejemplo-render-iffor', views.ejemploRenderIfFor, name='ejemploRenderIfFor'),
+    path('ejemplo-render-uso-plantilla', views.ejemploRenderLayout, name='ejemploRenderLayout'),
+    path('personas', views.index, name='personas'),
 
 ]
