@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+{% block title %}
+{{title}}
+{% endblock%}
+{% block content %}
+    <a href="{% url 'create' %}" class="btn btn-primary">+Create</a>
+<h1 class = "text-center">Datos de Persona</h1>
+
+<table class = "table table-bordered">
+    <thead>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Creado en</th>
+        <th>Actualizado en</th>
+        <th>Acciones</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{persona.firstName}}</td>
+            <td>{{persona.lastName}}</td>
+            <td>{{persona.created_at}}</td>
+            <td>{{persona.updated_at}}</td>
+            <td>Editar/Eliminar</td>
+        </tr>
+    </tbody>
+</table>
+{% endblock %}

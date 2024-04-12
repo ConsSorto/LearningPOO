@@ -32,3 +32,45 @@ def index(request):
     return render(request, "personas.html"
                   , {'title':'Listado Personas', 'personas': personas})
 
+def create(request):
+    return render(request, "create.html"
+                  , {'title':'Creacion'})
+
+def save(request):
+
+    if request.method == "POST":
+        firstName = request.POST['firstName']
+        lastName = request.POST['lastName']
+
+        person = Person(firstName = firstName, lastName = lastName)
+        person.save()
+
+    return index(request)
+
+def get(request, pk):
+    person = Person.objects.get(pk=pk)
+    return render(request, 'person.html',
+                 {'title' : 'Persona', 'persona':person})
+
+
+def edit(request, pk):
+    person = Person.objects.get(pk=pk)
+
+    return render(request, 'edit.html',
+                 {'title' : 'Editar', 'persona':person})
+
+def update(request, pk):
+    person = Person.objects.get(pk=pk)
+    if request.method == "POST":
+        person.firstName = request.POST['firstName']
+        person.lastName = request.POST['lastName']
+        person.save()
+
+    return index(request)
+
+def delete(request, pk):
+    person = Person.objects.get(pk=pk)
+    if request.method == "POST":
+        person.delete()
+
+    return index(request)

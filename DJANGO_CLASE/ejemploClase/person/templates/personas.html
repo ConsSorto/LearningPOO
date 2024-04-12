@@ -3,9 +3,10 @@
 {{title}}
 {% endblock%}
 {% block content %}
-<h1>Listado Personas</h1>
+    <a href="{% url 'create' %}" class="mt-3 btn btn-primary">+Create</a>
+<h1 class = "text-center">Listado Personas</h1>
 
-<table>
+<table class = "table table-bordered">
     <thead>
         <th>Nombre</th>
         <th>Apellido</th>
@@ -20,10 +21,19 @@
             <td>{{persona.lastName}}</td>
             <td>{{persona.created_at}}</td>
             <td>{{persona.updated_at}}</td>
-            <td>Editar/Eliminar</td>
+            <td>
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <form action="{% url 'delete' persona.id %}" method="POST">
+                        {% csrf_token %}
+                    <a href="{% url 'get' persona.id %}" class="btn btn-primary">Ver</a>
+                    <a href="{% url 'edit' persona.id %}" class="btn btn-info">Editar</a>
+
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </div>
+            </td>
         </tr>
         {% endfor %}
-
     </tbody>
 </table>
 {% endblock %}

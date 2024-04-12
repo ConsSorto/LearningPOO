@@ -19,6 +19,7 @@ from django.urls import path
 from person import views
 
 urlpatterns = [
+    path('', views.index, name='index'),
     path('admin/', admin.site.urls),
     path('ejemplo/', views.ejemplo, name='ejemplo'),
     path('ejemplo/<str:persona>', views.ejemploPersona, name='ejemploPersona'),
@@ -28,5 +29,11 @@ urlpatterns = [
     path('ejemplo-render-iffor', views.ejemploRenderIfFor, name='ejemploRenderIfFor'),
     path('ejemplo-render-uso-plantilla', views.ejemploRenderLayout, name='ejemploRenderLayout'),
     path('personas', views.index, name='personas'),
+    path('create', views.create, name='create'),
+    path('save', views.save, name='save'),
+    path('get/<int:pk>', views.get, name='get'),
+    path('edit/<int:pk>', views.edit, name='edit'),
+    path('update/<int:pk>', views.update, name='update'),
+    path('delete/<int:pk>', views.delete, name='delete'),
 
 ]
